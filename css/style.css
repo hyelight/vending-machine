@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+:root{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: var(font-family);
+    font-weight: 500;
+}
+body{
+    background-color: #EAE8FE;
+}
+/* IR */
+.screen_out{
+        overflow: hidden;
+        position: absolute;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        text-indent: -9999px;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.header img{
+    width: 386px;
+    height: 180px;
+}
+
+
+.main{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 28px;
+    margin-top: 68px;
+}
+.left{
+    height: 545px;
+    background-color: white;
+    padding: 31px 27px 28px;
+}
+.left, .right{
+    width: 360px;
+}
+
+/* 왼쪽 */
+.cola{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.cola li{
+    outline: 1px solid #BDBDBD;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11.07px 11px 9px;
+    width: 94px;
+    height: 130px;
+    background-color: white;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+}
+.cola li, button{
+    cursor:pointer;
+}
+/* 품절일때 커서 다르게 적용 */
+.cola .sold-out{
+    cursor:no-drop;
+}
+.cola li:hover, :focus{
+    outline: 3px solid #6327FE;
+    border-radius: 10px;
+}
+.cola li img{
+    width: 36px;
+    height: 65px;
+}
+.cola li span{
+    font-size: 9px;
+}
+.cola li button{
+    background-color: #6327FE;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 12px;
+    font-family: var(font-family);
+    padding: 5px 15px;
+    line-height: 100%;
+}
+.cola .sold-out{
+    position: relative;
+}
+.cola .sold-out:hover{
+    /* 원래 테두리로 주어 변화 없는 것처럼 설정 */
+    /* 공간 차지에 이상 없도록 border 대신 outline으로 */
+    outline: 1px solid #BDBDBD;
+}
+.cola .sold-out::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: url("../images/Sold-out.png") center no-repeat rgba(0, 0, 0, 0.8);
+    background-size : 58px 45px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+}
+.balance-pay-get{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 3.2fr;
+    gap: 11px 12px;
+    margin-top: 20px;
+    text-align: center;
+}
+.balance-pay-get .balance{
+    background-color: #EAE8FE;
+    display: flex;
+    justify-content: space-between;
+    line-height: 33px;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.balance-pay-get .pay{
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    padding: 0 6px;
+}
+.balance-pay-get .same-height{
+    height: 33px;
+}
+.balance-pay-get .same-font-size{
+    font-size: 13px;
+}
+.balance-btn, .pay-btn{
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));}
+.balance-pay-get .pay::placeholder{
+    color: #BDBDBD;
+}
+.balance-pay-get .pay-btn{
+    height: 32px;
+}
+.balance-pay-get .get{
+    background-color: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+/* 스크롤바 */
+.scroll-bar{
+ overflow-y: scroll;
+}
+/* [???] */
+.scroll-bar::-webkit-scrollbar{
+    width: 4px;
+}
+.scroll-bar::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+    /* 스크롤바 오른쪽 간격 [???] */
+    /* background-clip: padding-box;
+    border: 2px solid transparent; */
+}
+.scroll-bar::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 50px;
+}
+/* 높이를 따로 준 이유: grid로 만들었기 때문에 내부 콘텐츠가 늘어나면 겉 박스도 같이 늘어나는 상황이었음 
+하지만 overflow를 사용하여 scroll을 만들기 위해선 높이 값이 자동이 아닌 딱 정해져 있어야 함 그래서 이 박스만 따로 또 높이를 주게 됨 */
+.get{
+    height:105.6px;
+}
+.get-what-box{
+    margin-top: 12px;
+}
+.get-what{
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 46px;
+    margin: auto;
+    background-color:white;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    padding: 0 8px 0 10px;
+    /* get-what 내에 들어있는 div를 위해 */
+    position: relative;
+}
+.cola-list .get-what{
+    width: 276px;
+}
+.get-what img{
+    width: 18px;
+    height: 33px;
+    margin-right: 10px;
+}
+.get-what span{
+    font-size: 9px;
+}
+.get-what .count{
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    line-height: 1.8;
+    right: 0;
+    position: absolute;
+    margin-right: 8px;
+    text-align: center;
+}
+.balance-pay-get .get-btn{
+    color: white;
+    background-color: #6327FE;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+}
+.balance-btn, .pay-btn{
+    background-color: white;
+}
+
+/* 오른쪽 */
+.money-section{
+    background-color: white;
+    width: 360px;
+    height: 50px;
+    position: relative;
+}
+.money{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.money .your-money{
+    font-weight: 700;
+}
+.list-section{
+    height: 474px;
+    margin-top: 20px;
+    background-color: white;
+    padding-top: 25px;
+}
+.list-section strong{
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+.list-section .cola-list{
+    width: 306px;
+    height: 364px;
+    margin: auto;
+    margin-top: 13px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background-color: #EAE8FE;
+}
+.list-section .list-total{
+    position: absolute;
+    right: 0;
+    margin-right: 27px;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+    .header img{
+        width: 166px;
+        height: 78px;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .list-section{
+        margin-top: 0;
+    }
+}
