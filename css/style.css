@@ -301,6 +301,7 @@ body{
     font-size: 12px;
 }
 
+
 @media screen and (max-width: 900px) {
     .header img{
         width: 166px;
