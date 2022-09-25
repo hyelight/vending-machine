@@ -162,19 +162,18 @@ body{
     border-radius: 5px;
 }
 /* 스크롤바 */
+/* 내용이 넘치지 않아도 스크롤바가 있었으면 좋겠는데 사라짐 [???] */
 .scroll-bar{
  overflow-y: scroll;
 }
-/* [???] */
 .scroll-bar::-webkit-scrollbar{
-    width: 4px;
+    width: 11px;
 }
 .scroll-bar::-webkit-scrollbar-thumb{
     background-color: white;
     border-radius: 50px;
-    /* 스크롤바 오른쪽 간격 [???] */
-    /* background-clip: padding-box;
-    border: 2px solid transparent; */
+    background-clip: padding-box;
+    border: 3.5px solid transparent;
 }
 .scroll-bar::-webkit-scrollbar-track{
     background-color: transparent;
@@ -184,6 +183,7 @@ body{
 하지만 overflow를 사용하여 scroll을 만들기 위해선 높이 값이 자동이 아닌 딱 정해져 있어야 함 그래서 이 박스만 따로 또 높이를 주게 됨 */
 .get{
     height:105.6px;
+    padding: 0 11px;
 }
 .get-what-box{
     margin-top: 12px;
@@ -281,6 +281,7 @@ body{
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     background-color: #EAE8FE;
+    padding: 0 11px;
 }
 .list-section .list-total{
     position: absolute;
