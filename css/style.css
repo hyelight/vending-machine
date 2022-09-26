@@ -88,7 +88,8 @@ body{
 .cola li span{
     font-size: 9px;
 }
-.cola li button{
+/* 버튼으로 바꿔야 함 */
+.cola li .how-much{
     background-color: #6327FE;
     color: white;
     border-radius: 50px;
@@ -121,7 +122,8 @@ body{
 .balance-pay-get{
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 3.2fr;
+    /* 없어도 가능 => height만 고정값으로 주어지면*/
+    /* grid-template-rows: 1fr 1fr 3.2fr; */
     gap: 11px 12px;
     margin-top: 20px;
     text-align: center;
@@ -297,7 +299,7 @@ body{
     position: absolute;
     right: 0;
     margin-right: 27px;
-    margin-top: 6px;
+    margin-top: 9px;
     font-size: 12px;
 }
 
